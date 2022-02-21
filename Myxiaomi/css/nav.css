@@ -1,0 +1,52 @@
+.nav {
+  background: #333;
+  color: #b0b0b0;
+  font-size: 12px;
+}
+.nav-menu li {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+}
+.nav-menu li a {
+  padding: 0 7px;
+  border-left: 1px solid #424242;
+}
+.nav-menu li a:hover {
+  color: #fff;
+}
+.nav-menu li:first-child a {
+  padding-left: 0;
+}
+.nav-cars {
+  position: relative;
+  z-index: 10;
+}
+.nav-cars a {
+  display: block;
+  height: 40px;
+  width: 120px;
+  text-align: center;
+  line-height: 40px;
+  margin-left: 13px;
+  background: #424242;
+}
+.nav-detail {
+  position: absolute;
+  right: 0;
+  width: 320px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-top: none;
+  display: none;
+  background: #fff;
+}
+.nav-cars:hover .nav-detail {
+  display: block;
+}
+.nav-cars:hover a {
+  background: #fff;
+  color: #ff6700;
+}
