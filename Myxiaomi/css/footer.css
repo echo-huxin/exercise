@@ -1,0 +1,54 @@
+.footer-top {
+  height: 75px;
+  padding: 27px 0;
+  border: 1px solid #e0e0e0;
+}
+.footer-top a {
+  width: 20%;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  color: #616161;
+}
+.footer-top a i {
+  font-size: 26px;
+  vertical-align: -4px;
+}
+.footer-bottom {
+  padding: 40px 0;
+}
+.footer-links {
+  width: 160px;
+}
+.footer-links h3 {
+  font-size: 14px;
+  color: #424242;
+  font-weight: normal;
+  margin-bottom: 13px;
+}
+.footer-links a {
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.footer-connect {
+  text-align: center;
+  width: 245px;
+  height: 100%;
+  border-left: 1px solid #e0e0e0;
+}
+.footer-phone {
+  font-size: 22px;
+  color: #fb6706;
+}
+.footer-support {
+  width: 120px;
+  display: inline-block;
+  border: 1px solid #fb6706;
+  color: #fb6706;
+  margin: 5px 0;
+}
+.footer-watch .xl {
+  color: #fb6706;
+}

@@ -1,0 +1,158 @@
+.banner {
+  height: 460px;
+  position: relative;
+}
+.banner a img {
+  width: 100%;
+  height: 460px;
+}
+.banner-pointer {
+  width: 40px;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #b8c3cd;
+  line-height: 70px;
+}
+.banner-pointer a {
+  font-size: 30px;
+}
+.banner-pointer-right {
+  right: 0;
+}
+.banner-pointer-left {
+  left: 234px;
+}
+.dots {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+.dots a {
+  float: left;
+  width: 10px;
+  height: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  margin-left: 8px;
+  background: rgba(0, 0, 0, 0.4);
+}
+.dots .active {
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.3);
+}
+.banner-menu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 234px;
+  padding: 20px 0;
+  background-color: rgba(105, 101, 101, 0.6);
+}
+.banner-menu li {
+  padding: 0 20px 0 30px;
+  height: 42px;
+  line-height: 42px;
+  color: #fff;
+}
+.banner-sub-menu {
+  position: absolute;
+  left: 234px;
+  top: 0;
+  width: 992px;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #000;
+  display: none;
+}
+.banner-sub-menu a {
+  width: 25%;
+  height: 16.666%;
+  padding: 20px;
+  color: #333;
+}
+.banner-sub-menu a img {
+  width: 40px;
+  height: 40px;
+}
+.banner-sub-menu a span {
+  width: 154px;
+  margin-left: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.banner-menu li:hover {
+  background: #ff6a00;
+}
+.banner-menu li:hover .banner-sub-menu {
+  display: block;
+}
+.banner2 {
+  padding: 14px 0 26px 0;
+}
+.banner2 > a {
+  margin-right: 15px;
+  float: left;
+}
+.banner2 > a:last-child {
+  margin-right: 0;
+}
+.banner2 > a > img {
+  width: 316px;
+  height: 170px;
+}
+
+.banner2-service {
+  width: 234px;
+  height: 170px;
+  margin-right: 14px;
+  padding: 3px;
+  background: #5f5750;
+}
+.banner2-service a {
+  width: 76px;
+  height: 82px;
+  text-align: center;
+  font-size: 12px;
+  color: #ccc;
+  position: relative;
+}
+.banner2-service a i {
+  font-size: 26px;
+  display: block;
+}
+.banner2-service a::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 70px;
+  background: #665e57;
+}
+.banner2-service a:nth-child(3n + 1):before {
+  content: none;
+}
+.banner2-service a::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  width: 64px;
+  height: 1px;
+  background: #665e57;
+  bottom: 0;
+}
+.banner2-service a:nth-child(n + 4)::after {
+  content: none;
+}
+.main {
+  background: #f5f5f5;
+  padding: 22px 0;
+}
+
+.banner3 {
+}
+.banner3 img {
+  display: block;
+  height: 120px;
+}

@@ -82,6 +82,7 @@
   overflow: auto;
   padding-left: 10px;
   display: none;
+  background: #fff;
 }
 .header-search input:focus {
   outline: 1px solid #ff6700;

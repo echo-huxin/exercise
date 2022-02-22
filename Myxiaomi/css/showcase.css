@@ -1,0 +1,40 @@
+.sc .sc-top {
+  height: 58px;
+  line-height: 58px;
+}
+.sc .sc-top .sc-title {
+  font-size: 22px;
+  font-weight: normal;
+}
+.sc-item-first img {
+  width: 234px;
+  height: 614px;
+}
+.sc-list {
+  width: 978px;
+}
+.sc-list .sc-item {
+  width: 234px;
+  height: 300px;
+  text-align: center;
+  float: left;
+  background: #ffff;
+  padding: 20px 0;
+  color: #333;
+  margin: 0 14px 14px 0;
+}
+.sc-list .sc-item:nth-child(4n) {
+  margin-right: 0;
+}
+.sc-item img {
+  width: 160px;
+  height: 160px;
+}
+
+.sc-item .sc-desc {
+  color: #b0b0b0;
+}
+.sc-item .sc-price {
+  margin-top: 20px;
+  color: #ec6617;
+}
