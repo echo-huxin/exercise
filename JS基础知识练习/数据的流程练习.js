@@ -148,21 +148,68 @@
 /* 
 4. 有两个数组，看两个数组中是否都存在奇数，输出 是 或 否
 */
-let arr = [1, 23, 423, 532, 23234, 5];
-let arr1 = [22, 44, 66, 88, 77];
-let flag1 = false;
-let flag2 = false;
-for (var i = 0; i < arr.length; i++) {
-  if (arr[i] % 2) {
-    flag1 = true;
-    break;
-  }
-}
-for (var i = 0; i < arr1.length; i++) {
-  if (arr1[i] % 2) {
-    flag2 = true;
-    break;
-  }
-}
+// let arr = [1, 23, 423, 532, 23234, 5];
+// let arr1 = [22, 44, 66, 88, 77];
+// let flag1 = false;
+// let flag2 = false;
+// for (var i = 0; i < arr.length; i++) {
+//   if (arr[i] % 2) {
+//     flag1 = true;
+//     break;
+//   }
+// }
+// for (var i = 0; i < arr1.length; i++) {
+//   if (arr1[i] % 2) {
+//     flag2 = true;
+//     break;
+//   }
+// }
 
-console.log(flag1 && flag2);
+// console.log(flag1 && flag2);
+/* 
+1. 输出一个对象的所有键值对
+*/
+// let obj = {
+//   name: "zs",
+//   age: 18,
+//   mobile: "1336732132232",
+//   address: "二仙桥",
+// };
+// for (const key in obj) {
+//   console.log(key, obj[key]);
+// }
+/* 
+2. 计算对象中字符串属性的数量
+*/
+let obj = {
+  name: "zs",
+  age: 18,
+  mobile: "1336732132232",
+  address: "二仙桥",
+};
+/* 
+3. 将一个对象所有的数字属性，转换为字符串，并在其前面加上￥
+例如：
+{
+    name:"xxx",
+    balance: 199.8, //余额
+    taken: 3000 //消费
+}
+-->
+{
+    name:"xxx",
+    balance: '￥199.8', //余额
+    taken: '￥3000' //消费
+}
+*/
+
+/* 
+4. 按照下面的要求进行转换
+[1, 2, 3]  
+-->
+[
+    {number:1, doubleNumber: 2},
+    {number:2, doubleNumber: 4},
+    {number:3, doubleNumber: 6},
+]
+*/
