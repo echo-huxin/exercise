@@ -89,7 +89,7 @@ var nums2 = [6, 3, 2, 7, 11, 33];
 // includes(nums, 55) && includes(nums2, 55)
 //   ? console.log("是")
 //   : console.log("否");
-var nums3 = [2, 25, 1];
+var nums3 = [2, 5, 1];
 
 /* 
   3. 思考题：判断nums3中是否所有数字都在nums中存在，输出是或否
@@ -100,5 +100,5 @@ for (var i = 0; i < nums3.length; i++) {
     console.log("否");
     break;
   }
-  if (i === num3.length - 1) console.log("是");
+  if (i === nums3.length - 1) console.log("是");
 }
