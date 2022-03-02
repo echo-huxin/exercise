@@ -30,3 +30,15 @@ function User(firstName, lastName) {
 let obj = {};
 User.call(obj, "张", "三");
 console.log(obj);
+(function () {
+  try {
+    throw new Error();
+  } catch (z) {
+    var x = 1;
+    var y = 2;
+    console.log(x);
+  }
+  console.log(x);
+  console.log(y);
+  return 3;
+})();
