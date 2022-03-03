@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function debouce(fn, sleep) {
+      let timerId = null;
+      return function () {
+        let agr = Array.prototype.slice.call(arguments);
+        clearTimeout(timerId);
+        timerId = setTimeout(() => {
+          fn.apply(null, agr);
+        }, sleep);
+      };
+    }
+
+    window.onmousemove = debouce(function () {
+      console.log(12323);
+    }, 2000);
+  </script>
+</html>

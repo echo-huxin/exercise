@@ -16,3 +16,6 @@ function stop() {
   clearInterval(timerId);
   timerId = null;
 }
+
+let a = /sed+/i;
+Math.ceil;

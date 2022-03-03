@@ -65,6 +65,7 @@ function slideRight() {
   change(index);
   dots[index].onclick();
 }
+
 function change(i) {
   let img = $(".banner-cover img");
   let a = $(".banner-cover");
