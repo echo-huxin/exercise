@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        list-style: none;
+      }
+      .container {
+        width: 100%;
+        padding: 20px;
+        background: skyblue;
+        line-height: 60px;
+        height: 100px;
+      }
+      .title {
+        padding: 0 10px;
+        border-right: 2px solid gray;
+      }
+
+      .scroll {
+        margin-left: 10px;
+        overflow: auto scroll;
+        height: 100%;
+        position: relative;
+        width: 200px;
+      }
+      ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 1s;
+        width: 100%;
+      }
+      li {
+        background: red;
+        width: 100%;
+
+        text-align: center;
+        height: 100%;
+      }
+      .fl {
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title fl">最新公告</div>
+      <div id="box" class="scroll fl">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <script>
+    let ul = $("ul");
+    let liAll = $("ul>li", true);
+    let li = liAll[0];
+
+    function change() {
+      let count = 0;
+      let scrollHeihgt = parseInt(getComputedStyle(li).height);
+      let scrollTop = parseInt(getComputedStyle(ul).top);
+      console.log(scrollHeihgt, scrollTop);
+      return function () {
+        count++;
+        scrollTop += scrollHeihgt * count;
+        box.scrollTop = scrollTop;
+      };
+    }
+
+    function $(el, all) {
+      if (all === true) {
+        return document.querySelectorAll(el);
+      } else {
+        return document.querySelector(el);
+      }
+    }
+  </script>
+</html>
