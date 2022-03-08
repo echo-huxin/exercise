@@ -26,7 +26,7 @@
 
       .scroll {
         margin-left: 10px;
-        overflow: auto scroll;
+        overflow: hidden;
         height: 100%;
         position: relative;
         width: 200px;
@@ -54,7 +54,7 @@
     <div class="container">
       <div class="title fl">最新公告</div>
       <div id="box" class="scroll fl">
-        <ul>
+        <ul class="list">
           <li>1</li>
           <li>2</li>
           <li>3</li>
@@ -65,28 +65,41 @@
     </div>
   </body>
   <script>
-    let ul = $("ul");
-    let liAll = $("ul>li", true);
-    let li = liAll[0];
+    //1.获取列表第一个元素添加到列表尾部
+    let list = document.querySelector(".list");
+    let firstEle = list.children[0];
+    let cloneFirst = firstEle.cloneNode(true);
+    list.appendChild(cloneFirst);
+    //2.通过定时器让文字滚动
+    let totalDuration = 3000; //总时长
+    setInterval(moveNext, totalDuration);
+    let curIndex = 0;
+    function moveNext() {
+      console.log(1232);
+      let eleHeight = parseInt(getComputedStyle(firstEle).height);
 
-    function change() {
-      let count = 0;
-      let scrollHeihgt = parseInt(getComputedStyle(li).height);
-      let scrollTop = parseInt(getComputedStyle(ul).top);
-      console.log(scrollHeihgt, scrollTop);
-      return function () {
-        count++;
-        scrollTop += scrollHeihgt * count;
-        box.scrollTop = scrollTop;
-      };
-    }
+      // 3. 利用定时器条时滚动条跳转产生动画效果
+      // 3.1 每次移动的距离/总距离= 执行动画的频率/总时长
+      let from = curIndex * eleHeight;
+      curIndex++;
+      let to = curIndex * eleHeight;
+      let duration = 1000; //执行动画的频率
+      let step = ((to - from) * duration) / totalDuration;
+      let timerId = null;
 
-    function $(el, all) {
-      if (all === true) {
-        return document.querySelectorAll(el);
-      } else {
-        return document.querySelector(el);
-      }
+      timerId = setInterval(() => {
+        from += step;
+        console.log(from);
+        if (from >= to) {
+          from = to;
+          clearInterval(timerId);
+          if (curIndex === list.children.length - 1) {
+            curIndex = 0;
+            from = 0;
+          }
+        }
+        box.scrollTop = from;
+      }, duration);
     }
   </script>
 </html>

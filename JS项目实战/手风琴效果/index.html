@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .menu1 {
+        width: 200px;
+        margin: 100px auto;
+      }
+      .menu1 > li {
+        background: skyblue;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .menu1 > li > h5 {
+        height: 50px;
+        line-height: 50px;
+      }
+      .menu2 {
+        height: 0;
+        overflow: hidden;
+      }
+      .menu2 > li {
+        background: red;
+        border: 1px solid #000;
+        height: 50px;
+      }
+      /* ul > li > ul {
+      }
+      ul > li > ul > li {
+        background: red;
+      }
+      .box {
+        width: 200px;
+        height: 200px;
+        background: green;
+      } */
+    </style>
+  </head>
+  <body>
+    <ul class="menu1">
+      <li>
+        <h5>菜单1</h5>
+        <ul class="menu2">
+          <li>菜单1</li>
+          <li>菜单2</li>
+          <li>菜单3</li>
+          <li>菜单4</li>
+        </ul>
+      </li>
+      <li>
+        <h5>菜单2</h5>
+        <ul class="menu2">
+          <li>菜单1</li>
+          <li>菜单2</li>
+          <li>菜单3</li>
+          <li>菜单4</li>
+        </ul>
+      </li>
+      <li>
+        <h5>菜单3</h5>
+        <ul class="menu2">
+          <li>菜单1</li>
+          <li>菜单2</li>
+          <li>菜单3</li>
+          <li>菜单4</li>
+        </ul>
+      </li>
+      <li>
+        <h5>菜单4</h5>
+        <ul class="menu2">
+          <li>菜单1</li>
+          <li>菜单2</li>
+          <li>菜单3</li>
+          <li>菜单4</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+  <script src="./creatAnimation.js"></script>
+  <script src="./index1.js"></script>
+</html>
