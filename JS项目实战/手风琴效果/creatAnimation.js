@@ -10,7 +10,7 @@ function creatAnimation(options) {
   timerId = setInterval(function () {
     from += step;
     curTimes++;
-    console.log(from, curTimes, times);
+    // console.log(from, curTimes, times);
     options.onmove && options.onmove(from);
     if (curTimes === times) {
       clearInterval(timerId);
