@@ -4,7 +4,38 @@
 //3. 单选出现一个为全中,取消选择按钮
 
 //点击不同字段表头进行排序
-
+let dataTable = [
+  {
+    id: 9,
+    name: "王同学",
+    age: 24,
+    work: "C++程序员",
+  },
+  {
+    id: 2,
+    name: "张同学",
+    age: 44,
+    work: "WEB前端",
+  },
+  {
+    id: 1,
+    name: "艾伦",
+    age: 14,
+    work: "交互设计师",
+  },
+  {
+    id: 27,
+    name: "小明同学",
+    age: 28,
+    work: "PHP工程师",
+  },
+  {
+    id: 35,
+    name: "玛丽",
+    age: 30,
+    work: "测试员",
+  },
+];
 let oTbody = document.querySelector("tbody");
 init();
 let master = document.querySelector(".master>input");
