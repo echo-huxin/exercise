@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .swiper-box {
+        height: 500px;
+        background: black;
+        position: relative;
+      }
+      .swiper-box-nav {
+        height: 70px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.4);
+        position: absolute;
+      }
+      .swiper-box-container {
+        height: 100%;
+      }
+      img {
+        width: 100%;
+        display: block;
+        height: 100%;
+      }
+      .recommend {
+        height: 430px;
+        width: 350px;
+        position: absolute;
+        right: 0;
+        top: 70px;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .recommend > h3 {
+        display: block;
+        position: relative;
+        height: 35px;
+        line-height: 35px;
+        margin: 10px 0 0 45px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 22px;
+      }
+      .icon {
+        display: inline-block;
+        position: absolute;
+        width: 15px;
+        height: 16px;
+        left: -22px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .icon.sz {
+        background: url("./img/all.png");
+      }
+      .icon.fire {
+        background: url("./img/tj.png");
+      }
+      dl {
+        margin: 10px 0 0 45px;
+        background: #ff5c38;
+      }
+      dd {
+        height: 35px;
+        line-height: 35px;
+        color: rgba(255, 255, 255, 0.7);
+        white-space: nowrap;
+        overflow: hidden;
+        background: green;
+      }
+
+      dd span {
+        width: 100px;
+        display: none;
+      }
+      .active {
+        color: #ff5c38;
+      }
+      .active {
+        font-weight: 600;
+        font-size: 22px;
+        color: #ff5c38;
+      }
+      .active span {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: normal;
+        padding-left: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        vertical-align: middle;
+      }
+      dt {
+        font-size: 22px;
+        height: 35px;
+        line-height: 35px;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 600;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="swiper-box">
+      <div class="swiper-box-nav"></div>
+      <div class="swiper-box-container">
+        <img class="swiper-box-container-banner" alt="" />
+        <div class="recommend">
+          <h3><i class="icon sz"></i>猜你会追</h3>
+          <dl>
+            <dt>
+              <i class="icon fire"></i>
+              重磅推荐
+            </dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./data.js"></script>
+  <script>
+    (function () {
+      let oDl = document.querySelector("dl");
+      let bannerImg = document.querySelector(".swiper-box-container-banner");
+      let timerId = null;
+      let lists = [];
+      init();
+      function init() {
+        initRecommendList(autoChange);
+        initEvent();
+      }
+      function initEvent() {
+        lists.forEach((el) => {
+          el.addEventListener("mouseleave", function () {
+            autoChange();
+          });
+        });
+      }
+      function autoChange() {
+        console.log("开启定时器");
+        timerId = setInterval(function () {
+          let preActive = document.querySelector(".active");
+          preActive.className = "";
+          let index = lists.indexOf(preActive);
+          if (index === lists.length - 1) {
+            bannerImg.src = lists[0].mapBanner.src;
+            lists[0].className = "active";
+          } else {
+            console.log(index);
+            bannerImg.src = lists[index++].mapBanner.src;
+            lists[index++].className = "active";
+          }
+        }, 3000);
+      }
+      function handleImgChange() {
+        if (timerId) {
+          console.log("清楚定时器");
+          clearInterval(timerId);
+        }
+        timerId = null;
+        let preActive = document.querySelector(".active");
+        preActive.className = "";
+        bannerImg.src = this.mapBanner.src;
+        this.className = "active";
+      }
+      function initRecommendList(fn) {
+        data.forEach((obj, i) => {
+          let oDD = creatElement("dd");
+          let oSpan = creatElement("span");
+          oDD.innerText = obj.title;
+          oSpan.innerText = obj.desc;
+          oDD.mapBanner = {
+            src: obj.img,
+            bg: obj.bg,
+            index: i,
+          };
+
+          oDD.onmouseenter = handleImgChange;
+          if (i === 0) {
+            oDD.className = "active";
+            bannerImg.src = obj.img;
+          }
+          oDD.appendChild(oSpan);
+          oDl.appendChild(oDD);
+          lists.push(oDD);
+        });
+        fn();
+      }
+      function creatElement(targetName) {
+        return document.createElement(targetName);
+      }
+    })();
+  </script>
+</html>
