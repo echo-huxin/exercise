@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      #store {
+        width: 500px;
+        margin: 100px 200px;
+        position: relative;
+      }
+      .store-selected-img {
+        border: 1px solid #ccc;
+      }
+      .store-selected-img img {
+        width: 100%;
+        display: block;
+      }
+      .store-select-list {
+        text-align: center;
+      }
+      .store-select-list a {
+        display: inline-block;
+        margin-left: 10px;
+      }
+      .mask {
+        position: absolute;
+        background: url("./images/bg.png");
+        width: 230px;
+        height: 230px;
+        /* left: 100px; */
+        top: 0px;
+      }
+      .active {
+        border: 2px solid #000;
+      }
+      .bg-img {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #000;
+        position: absolute;
+        left: 510px;
+        top: 0;
+        overflow: hidden;
+      }
+      .bg-img img {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="store">
+      <div class="store-selected-img">
+        <img src="./images/imgA_2.jpg" alt="" />
+        <div class="mask"></div>
+      </div>
+      <div class="store-select-list">
+        <a href="#" class="active">
+          <img src="./images/imgA_1.jpg" alt="" />
+        </a>
+        <a href="#">
+          <img src="images/imgB_1.jpg" alt="" />
+        </a>
+        <a href="#">
+          <img src="images/imgC_1.jpg" alt="" />
+        </a>
+      </div>
+      <div class="bg-img">
+        <img src="./images/imgA_3.jpg" alt="" />
+      </div>
+    </div>
+  </body>
+  <!-- <script>
+    (function () {
+      let imgAll = document.querySelectorAll(".store-select-list a img");
+      let selectImg = document.querySelector(".store-selected-img img");
+      let mask = document.querySelector(".mask");
+      //   let maxTopValue = selectImg.getBoundingClientRect().top;
+      //   let maxBottomValue = selectImg.getBoundingClientRect().left;
+      //   let maxLeftValue = selectImg.getBoundingClientRect().right;
+      //   let maxRightValue = selectImg.getBoundingClientRect().bottom;
+
+      init();
+      function init() {
+        initEvent();
+      }
+      function initEvent() {
+        imgAll.forEach((ele) => {
+          ele.addEventListener("click", changeSelecedImg);
+        });
+        // selectImg.addEventListener("mouseover", toggleMaskStauts);
+        // selectImg.addEventListener("mouseout", toggleMaskStauts);
+        // selectImg.addEventListener("mousemove", getMouseCoords);
+      }
+      function changeSelecedImg() {
+        let activeEle = document.querySelector(".active");
+        activeEle.className = " ";
+        this.className = "active";
+        let bigImgsrc = this.src.replace(/_1/, "_2");
+        selectImg.src = bigImgsrc;
+      }
+      function toggleMaskStauts(e) {
+        // if (mask.style.display == "none") {
+        //   mask.style.display = "block";
+        // } else {
+        //   mask.style.display = "none";
+        // }
+        isMaxExceed(e.clientX, e.clientY);
+      }
+      function isMaxExceed(mouseX, mouseY) {
+        console.warn(mouseX, mouseY);
+        // console.log(maxTopValue, maxBottomValue, maxLeftValue, maxRightValue);
+        if (mouseX === maxLeftValue || mouseX === maxRightValue) {
+          mask.style.display = "none";
+          console.log("Dddd");
+          return;
+        } else if (mouseY === maxTopValue && mouseY === maxBottomValue) {
+          mask.style.display = "none";
+          console.log("Dddd");
+          return;
+        }
+        mask.style.display = "block";
+      }
+      function getMouseCoords(e) {
+        // isMaxExceed(e.clientX, e.clientY);
+        console.log(e.clientX, e.clientY);
+        // isMaxExceed(e.clientX, e.clientY);
+      }
+
+      function formatArr(subArr = []) {
+        Array.prototype.slice(subArr);
+      }
+    })();
+  </script> -->
+  <script src="./index.js"></script>
+</html>
