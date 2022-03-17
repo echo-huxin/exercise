@@ -21,7 +21,6 @@
     startBtn.addEventListener("click", RunningAnimation());
     mask.addEventListener("click", switchAlert);
   }
-
   function initdata() {
     oCount.innerText = lotteryCount;
     let data = [
