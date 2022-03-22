@@ -1,0 +1,16 @@
+users.forEach((element) => {
+  var oLi = document.createElement("li");
+  var oDivName = document.createElement("div");
+  var oDivAge = document.createElement("div");
+  var oDivStauts = document.createElement("div");
+  oDivName.className = "user-name";
+  oDivAge.className = "user-age";
+  oDivStauts.className = "user-status";
+  oDivName.innerHTML = element.name;
+  oDivAge.innerHTML = element.age;
+  oDivStauts.innerHTML = element.isSingle ? "单身" : "已脱单";
+  oLi.appendChild(oDivName);
+  oLi.appendChild(oDivAge);
+  oLi.appendChild(oDivStauts);
+  ul.appendChild(oLi);
+});

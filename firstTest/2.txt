@@ -1,0 +1,12 @@
+function getImgFiles(files) {
+  files || (files = []);
+  var reg = /(.gif|.bmp|.webp|.png|.jpeg|.jpg)$/;
+  var imgArray = [];
+  files.forEach((element) => {
+    var imgName = element.name;
+    if (reg.test(element.imgName)) {
+      imgArray.push(imgName);
+    }
+  });
+  return imgArray
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background: red;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+    }
+  </style>
+  <body>
+    <div class="box1"></div>
+  </body>
+  <script>
+    var box1 = document.querySelector(".box1");
+    var box1Width = parseInt(getComputedStyle(box1).width);
+    var box1Height = parseInt(getComputedStyle(box1).height);
+    var maxMoveX = document.documentElement.clientWidth - box1Width;
+    var maxMoveY = document.documentElement.clientHeight - box1Height;
+    var moveFn = null;
+    box1.addEventListener("mousedown", function (e) {
+      var initClienX = e.clientX;
+      var initClienY = e.clientX;
+      var domRect = this.getBoundingClientRect();
+      console.log(domRect.left, domRect.top);
+      var offsetX = initClienX - domRect.left;
+      var offsetY = initClienY - domRect.top;
+      moveFn = function (e) {
+        var moveX = e.clientX - offsetX;
+        var moveY = e.clientY - offsetY;
+        if (moveX <= 0) {
+          moveX = 0 + "px";
+        }
+        if (moveX >= maxMoveX) {
+          moveX = maxMoveX + "px";
+        }
+        if (moveY <= 0) {
+          moveY = 0 + "px";
+        }
+        if (moveY >= maxMoveY) {
+          moveY = maxMoveY + "px";
+        }
+        this.style.top = moveY + "px";
+        this.style.left = moveX + "px";
+      };
+      box1.addEventListener("mousemove", moveFn);
+    });
+    box1.addEventListener("mouseup", function () {
+      if (moveFn) {
+        box1.removeEventListener("mousemove", moveFn);
+      }
+    });
+  </script>
+</html>
