@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#board {
+  width: 500px;
+  height: 500px;
+  margin: 100px auto;
+  background: #f7e6b7;
+  padding: 20px;
+}
+table {
+  border-collapse: collapse;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+td {
+  position: relative;
+  border: 1px solid #000;
+}
+.chess {
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  left: -50%;
+  top: -50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.white {
+  background: white;
+  color: #000;
+}
+.black {
+  background: black;
+  color: #fff;
+}
