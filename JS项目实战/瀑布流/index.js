@@ -33,7 +33,6 @@ window.onload = function () {
       arr[minIndex] = top + pbl.imgAll[i].height;
       pbl.imgAll[i].style.left =
         (minIndex + 1) * pbl.gap + minIndex * pbl.imgWidth + "px";
-      // $(".box").appendChild(pbl.imgAll[i]);
     }
     $(".box").style.height = Math.max.apply(null, arr) + "px";
   }
@@ -42,14 +41,10 @@ window.onload = function () {
     for (let i = 0; i < 40; i++) {
       let oImg = document.createElement("img");
       oImg.src = "./img/" + i + ".jpg";
-      console.dir(oImg.offsetHeight);
       pbl.imgAll.push(oImg);
+      $(".box").appendChild(oImg);
       oImg.onload = function (e) {
         count++;
-        if (i === 0) console.log("第一张图片height", oImg.height);
-        setTimeout(function () {
-          console.log("offsetWidth", oImg.offsetWidth);
-        });
         if (count === 40) {
           fn();
         }
@@ -59,7 +54,6 @@ window.onload = function () {
   function computerGapWidth() {
     pbl.boxWidth = parseInt(getComputedStyle($(".box")).width);
     pbl.rowMaxShowImgNumber = Math.floor(pbl.boxWidth / pbl.imgWidth);
-    console.log(pbl.rowMaxShowImgNumber);
     pbl.gap =
       (pbl.boxWidth - pbl.rowMaxShowImgNumber * pbl.imgWidth) /
       (pbl.rowMaxShowImgNumber + 1);

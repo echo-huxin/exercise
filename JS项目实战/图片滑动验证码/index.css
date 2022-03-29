@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 280px;
+  height: 400px;
+  margin: 100px auto;
+}
+.container .tips img {
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.container .tips {
+  color: #7481db;
+  user-select: none;
+  text-align: center;
+  margin: 16px;
+}
+.checkBox {
+  background: #fff;
+  border: 1px solid #adadad;
+  box-shadow: 0px 0px 2px #adadad;
+  padding: 15px;
+}
+.checkBox h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.checkBox img {
+  width: 248px;
+  height: 200px;
+}
+.checkBox .slideBar {
+  margin-top: 15px;
+}
+.slideBar {
+  width: 248px;
+  height: 30px;
+  background: #dddddd;
+  border-radius: 10px;
+  position: relative;
+  user-select: none;
+}
+.slideBar .dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 99;
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff url("./img/yz.png") no-repeat;
+  background-size: cover;
+}
+.checkimg {
+  position: relative;
+}
+
+.matchBox,
+.matchImg {
+  position: absolute;
+  z-index: 99;
+  left: 0px;
+  top: 0px;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  background-size: cover;
+  transition: all 1s, left 0s, top 0s;
+}
+.matchImg {
+  opacity: 0;
+}
