@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    margin: 50px auto;
+    width: 800px;
+    padding: 50px;
+    box-shadow: 0 0 5px ;
+    border-radius: 20px;
+    position: relative;
+    background: #fff;
+    
+}
+.container::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform: rotate(354deg);
+    z-index: -1;
+    background: #0ea5e9;
+    border-radius: 20px;
+    
+}
+.nameAndWork{
+    display: flex;
+    align-items: flex-end;
+}
+.nameAndWork h3{
+    margin-left: 20px;
+}
+.userInfo{
+    display: flex;
+    
+}
+.userDesc{
+    flex: 1;
+    display: flex;
+    margin-top: 10px;
+}
+.userDesc>div{
+    padding: 0 10px;
+    flex: 1;
+}
+.contact,.deploy{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
+    color: #0ea5e9;;
+}
+.deploy{
+    color: #888;
+}
+.deploy span{
+    color: #333;
+}
+.avatar img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transform: translateY(-30%);
+ }
+    
+.module h2{
+  padding:  10px 0;    
+  border-bottom: 1px solid #ccc;
+}
+.module .content{
+   padding: 10px 10px;
+   margin: 10px 0;
+   border-left: 3px solid #22d3ee;
+}
+.module .content div{
+  margin-bottom: 20px;
+  position: relative;
+  color: #978888;
+}
+.module .content div span{
+    color: #333;
+}
+.module .content div::before{
+    content:"";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #0ea5e9;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-17px,5px);
+}
+.module .skills{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    row-gap: 30px;
+    margin-top: 20px;
+    
+}
+.module .skills div{
+    width: 130px;
+    height: 130px;
+    text-align: center;
+    line-height: 130px;
+    border-radius: 50%;
+    background: #f0fdff;
+    position: relative;
+}
+.module .skills div::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    content:" ";
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    box-sizing: border-box;
+    transform: rotate(45deg);
+}
+.module .skills div:nth-child(1)::before{
+    border-top-color: #0ea5e9;
+}
+.module .skills div:nth-child(2)::before{
+    border-top-color: #0ea5e9;
+    border-right-color: #0ea5e9;
+}
+.module .skills div:nth-child(3)::before{
+    border-top-color: #0ea5e9;
+    border-right-color: #0ea5e9;
+    border-bottom-color: #0ea5e9;
+}
