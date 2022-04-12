@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    async function getData() {
+      let data = await (async function () {
+        let params = {
+          name: "zs",
+          age: 16,
+        };
+        let response = await fetch(
+          "http://123.56.119.225:6006/test/proxy/testProxy",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(params),
+          }
+        );
+        let data = await response.json();
+        return data;
+      })();
+      console.log(data);
+    }
+    getData();
+  </script>
+</html>
